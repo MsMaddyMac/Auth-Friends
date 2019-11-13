@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { getFriends } from '../actions';
 
 const FriendsCard = props => {
+    console.log('Friendscard', props);
     return (
         <div>
             <h2>Press for Friends List</h2>

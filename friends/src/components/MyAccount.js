@@ -23,7 +23,7 @@ function MyAccount() {
         .catch(err => {
             console.log(err)
         })
-    }, []);
+    }, [user]);
 
     return (
         <>

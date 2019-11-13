@@ -64,7 +64,7 @@ function LoginForm(props) {
         axiosWithAuth()
         .post('/login', data)
         .then(result => {
-            localStorage.setItem('token', result.data.token)
+            localStorage.setItem('token', result.data.payload)
             props.history.push('/account')
         })
         .catch(err => {

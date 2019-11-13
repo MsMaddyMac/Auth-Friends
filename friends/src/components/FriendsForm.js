@@ -77,7 +77,7 @@ function FriendsForm(props) {
                     className={classes.textField}
                     type="text"
                     name="name"
-                    value={values.name}
+                    // value={values.name}
                     variant="outlined"
                     margin="normal"
                     onChange={handleChange}
@@ -89,7 +89,7 @@ function FriendsForm(props) {
                     className={classes.textField}
                     type="text"
                     name="age"
-                    value={values.age}
+                    // value={values.age}
                     variant="outlined"
                     margin="normal"
                     onChange={handleChange}
@@ -101,7 +101,7 @@ function FriendsForm(props) {
                     type="text"
                     name="email"
                     autoComplete="email"
-                    value={values.email}
+                    // value={values.email}
                     variant="outlined"
                     margin="normal"
                     onChange={handleChange}

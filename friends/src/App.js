@@ -4,8 +4,8 @@ import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom';
 import { getToken } from './utils/axiosWithAuth';
 //component imports
 import MyAccount from './components/MyAccount';
-import FriendsForm from './components/FriendsForm';
-import FriendsCard from './components/FriendsCard';
+// import FriendsForm from './components/FriendsForm';
+// import FriendsCard from './components/FriendsCard';
 import PrivateRoute from '../src/components/PrivateRoute';
 import LoginForm from './components/LoginForm';
 

@@ -13,11 +13,26 @@ export function getFriends() {
         dispatch(friendsLoading());
         return axiosWithAuth()
         .get('/friends')
-        .then(res => dispatch(friendsLoading(res.data)))
+        .then(res => dispatch(friendsLoadingSuccess(res.data)))
         .catch(err => dispatch(friendsLoadingFailure(), err)
         );
     };
 }
+// export function getFriends() {
+//     return function(dispatch) {
+//         dispatch(friendsLoading());
+//         return axios
+//         .create({
+//             headers: {
+//                 authorization: localStorage.getItem('token')
+//             }
+//         })
+//         .get('/friends')
+//         .then(res => dispatch(friendsLoadingSuccess(res.data)))
+//         .catch(err => dispatch(friendsLoadingFailure(), err)
+//         );
+//     };
+// }
 
 export const POST_NEW_FRIEND_POSTING = 'POST_NEW_FRIEND_POSTING';
 export const POST_NEW_FRIEND_SUCCESS = 'POST_NEW_FRIEND_SUCCESS';
