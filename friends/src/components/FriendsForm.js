@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 // react-redux imports
 import { connect } from 'react-redux';
 // action import
+import { postFriend } from '../actions';
 
 // Material UI imports
 import { Paper, Typography, makeStyles, Button, TextField} from '@material-ui/core';
@@ -61,7 +62,7 @@ function FriendsForm(props) {
 
     const handleSubmit = e => {
         e.preventDefault();
-        // props.dispatch postFriends here
+        props.dispatch(postFriend(values));
     }
 
     return (
@@ -113,4 +114,6 @@ function FriendsForm(props) {
 
 }
 
-export default FriendsForm
+export default connect(state => {
+    return state;
+})(FriendsForm);
