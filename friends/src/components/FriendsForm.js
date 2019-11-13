@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 // action import
 
 // Material UI imports
-import { Paper, Typography, MenuItem, makeStyles, Button, TextField, InputBase } from '@material-ui/core';
+import { Paper, Typography, makeStyles, Button, TextField} from '@material-ui/core';
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -31,7 +31,7 @@ const useStyles = makeStyles(theme => ({
         marginTop: theme.spacing(2),
     },
     menu: {
-        width: 500,
+        width: 300,
     },
     button: {
         margin: theme.spacing(1),
@@ -43,70 +43,74 @@ const useStyles = makeStyles(theme => ({
 
     font: {
         color: 'black',
-        fontSize: 65,
+        fontSize: 25,
         paddingBottom: 20,
       },
 }));
 
-function FriendsForm() {
+function FriendsForm(props) {
+    const classes = useStyles();
     const [values, setValues] = useState({
         name: '',
-        age: 0,
+        age: '',
         email: ''
     })
+
+
+    const handleChange = e => setValues({...values, [e.target.name]: e.target.value});
+
+    const handleSubmit = e => {
+        e.preventDefault();
+        // props.dispatch postFriends here
+    }
+
+    return (
+        <Paper className={classes.root}>
+            <form className={classes.container} autoComplete="off" onSubmit={handleSubmit}>
+                <Typography className={classes.font} variant="h4">
+                    Add a Friend!
+                </Typography>
+                <TextField
+                    id="outlined-name"
+                    label="name"
+                    className={classes.textField}
+                    type="text"
+                    name="name"
+                    value={values.name}
+                    variant="outlined"
+                    margin="normal"
+                    onChange={handleChange}
+                    required
+                />
+                <TextField
+                    id="outlined-age"
+                    label="age"
+                    className={classes.textField}
+                    type="text"
+                    name="age"
+                    value={values.age}
+                    variant="outlined"
+                    margin="normal"
+                    onChange={handleChange}
+                />
+                <TextField
+                    id="outlined-email-input"
+                    label="email"
+                    className={classes.textField}
+                    type="text"
+                    name="email"
+                    autoComplete="email"
+                    value={values.email}
+                    variant="outlined"
+                    margin="normal"
+                    onChange={handleChange}
+                    required
+                />
+                <Button className={classes.button} variant="contained" type="submit">Submit</Button>
+            </form>
+        </Paper>
+    )
+
 }
 
-const handleChange = e => setValues({...values, [e.target.name]: e.target.value});
-
-const handleSubmit = e => {
-    e.preventDefault();
-    // props.dispatch postFriends here
-}
-
-return (
-    <Paper className={classes.root}>
-        <form className={classes.container} autoComplete="off" onSubmit={handleSubmit}>
-            <Typography className={classes.font} variant="h4">
-                Add a Friend!
-            </Typography>
-            <TextFeld
-                id="outlined-name"
-                label="name"
-                className={classes.textField}
-                type="text"
-                name="name"
-                value={values.name}
-                variant="outlined"
-                margin="normal"
-                onChange={handleChange}
-                required
-            />
-            <TextFeld
-                id="outlined-age"
-                label="age"
-                className={classes.textField}
-                type="text"
-                name="age"
-                value={values.age}
-                variant="outlined"
-                margin="normal"
-                onChange={handleChange}
-                required
-            />
-            <TextFeld
-                id="outlined-email-input"
-                label="email"
-                className={classes.textField}
-                type="text"
-                name="email"
-                autoComplete="email"
-                value={values.name}
-                variant="outlined"
-                margin="normal"
-                onChange={handleChange}
-                required
-            />
-            <Button className={classes.button} variant="contained" type="submit">Submit</Button>
-        </form>
-    </Paper>
-)
+export default FriendsForm
