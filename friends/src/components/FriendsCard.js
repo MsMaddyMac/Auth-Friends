@@ -11,13 +11,13 @@ const FriendsCard = props => {
             <button className='get-btn' onClick={() => props.dispatch(getFriends())}>Get Friends!</button>
             {props.isFetching && <h3>Friends Coming Soon!</h3>}
             {props.error && <div>{props.error.message}</div>}
-                {props.friends && props.friends.map((friend, id) => {
+                {props.friends && props.friends.map((friend, id) => (
                     <div className="friends" key={id}>
                         <h2>{friend.name}</h2>
                         <p>{friend.age}</p>
                         <p>{friend.email}</p>
                     </div>
-                })}
+                ))}
         </div>
     )
 }

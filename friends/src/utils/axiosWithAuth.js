@@ -3,7 +3,7 @@ import axios from 'axios';
 
 
 // Axios helper function
-export const axiosWithAuth = () => {
+const axiosWithAuth = () => {
     // Helper function that gets token from localStorage
     const token = localStorage.getItem('token');
     return axios.create({
@@ -13,3 +13,6 @@ export const axiosWithAuth = () => {
         }
     });
 };
+
+
+export default axiosWithAuth

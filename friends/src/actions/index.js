@@ -5,11 +5,12 @@ export const GET_FRIENDS_SUCCESS = 'GET_FRIENDS_SUCCESS';
 export const GET_FRIENDS_FAILURE = 'GET_FRIENDS_FAILURE';
 
 export const friendsLoading = () => ({ type: GET_FRIENDS_LOADING });
-export const friendsLoadingSuccess = () => ({ type: GET_FRIENDS_SUCCESS, payload: data });
-export const friendsLoadingFailure = () => ({ type: GET_FRIENDS_FAILURE, payload: error });
+export const friendsLoadingSuccess = data => ({ type: GET_FRIENDS_SUCCESS, payload: data });
+export const friendsLoadingFailure = error => ({ type: GET_FRIENDS_FAILURE, payload: error });
 
 export function getFriends() {
     return function(dispatch) {
+        dispatch(friendsLoading());
         return axiosWithAuth()
         .get('/friends')
         .then(res => dispatch(friendsLoading(res.data)))

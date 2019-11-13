@@ -1,9 +1,9 @@
 import React from 'react';
 import './App.css';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 //component imports
 import FriendsForm from './components/FriendsForm';
-// import FriendsList from './components/FriendsList';
+import FriendsCard from './components/FriendsCard';
 
 
 
@@ -16,7 +16,7 @@ function App() {
             <h1>Friends List Coming Soon!</h1>
           </header>
           <FriendsForm />
-          {/* <FriendsList /> */}
+          <FriendsCard />
         </div>
       </Router>
   );
