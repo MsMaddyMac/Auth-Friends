@@ -48,7 +48,7 @@ function LoginForm(props) {
     const classes = useStyles(); 
     const [error, setError] = useState();
     const [data, setData] = useState({
-        email: '',
+        username: '',
         password: ''
     });
 
@@ -81,12 +81,12 @@ function LoginForm(props) {
                     Login
                 </Typography>
                 <TextField
-                    id='outlined-email-input'
-                    label='email'
+                    id='outlined-username-input'
+                    label='username'
                     className={classes.textField}
-                    type='email'
-                    name='email'
-                    autoComplete='email'
+                    type='username'
+                    name='username'
+                    autoComplete='username'
                     margin='normal'
                     variant='outlined'
                     onChange={handleChange}
