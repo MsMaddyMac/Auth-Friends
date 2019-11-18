@@ -28,7 +28,7 @@ function reducer(state = initialState, action) {
         case GET_FRIENDS_FAILURE:
             return {
                 ...state,
-                smurfs: [],
+                friends: [],
                 isFetching: false,
                 error: action.payload
             };
