@@ -36,21 +36,21 @@ function reducer(state = initialState, action) {
             return {
                 ...state,
                 isFetching: true,
-                errors: null,
+                error: null,
                 friends: []
             };
         case POST_NEW_FRIEND_SUCCESS:
             return {
                 ...state,
                 isFetching: false,
-                errors: null,
+                error: null,
                 friends: action.payload
             };
         case POST_NEW_FRIEND_FAILURE:
             return {
                 ...state,
                 isFetching: false,
-                errors: action.payload,
+                error: action.payload,
                 friends: []
             };
         default:
