@@ -1,0 +1,25 @@
+.App {
+  text-align: center;
+}
+
+
+.App-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1rem;
+  background-color:#9beaf7;
+}
+
+img {
+  width: 75px;
+}
+
+
+a {
+  text-decoration: none;
+  color:#dc80bc;
+  font-weight: bold;
+  margin-right: 10px;
+
+}
